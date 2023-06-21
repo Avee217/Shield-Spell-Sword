@@ -118,7 +118,7 @@ public class GameplayController : MonoBehaviour
 
      void SetEnemySelection()
     {
-        int rand = Random.Range(0, 2);
+        int rand = Random.Range(0, 3);
 
         switch (rand)
         {
