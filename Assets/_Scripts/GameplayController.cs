@@ -7,6 +7,7 @@ using UnityEngine.Video;
 using Random = UnityEngine.Random;
 
 public enum GameSelections { NONE, SHIELD, SPELL, SWORD}
+public enum enemyVideoSelection { Draw, Win, Lose }
 
 public class GameplayController : MonoBehaviour
 {
@@ -66,7 +67,7 @@ public class GameplayController : MonoBehaviour
             // Draw
             Debug.Log("Draw");
             audioSource.clip = tie_Sfx;
-            videoPlayer.clip = currentEnemy.Videos[0];
+            videoPlayer.clip = currentEnemy.Videos[(int) enemyVideoSelection.Draw];
             StartCoroutine(DetermineWinnerAndRestart());
         }
 
@@ -75,7 +76,7 @@ public class GameplayController : MonoBehaviour
             //Lose
             Debug.Log("Sheild Lose");
             audioSource.clip = shieldLose_Sfx;
-            videoPlayer.clip = currentEnemy.Videos[1];
+            videoPlayer.clip = currentEnemy.Videos[(int)enemyVideoSelection.Lose];
             StartCoroutine(DetermineWinnerAndRestart());
         }
 
@@ -84,7 +85,7 @@ public class GameplayController : MonoBehaviour
             //Lose
             Debug.Log("Spell Lose");
             audioSource.clip = spellLose_Sfx;
-            videoPlayer.clip = currentEnemy.Videos[1];
+            videoPlayer.clip = currentEnemy.Videos[(int)enemyVideoSelection.Lose];
             StartCoroutine(DetermineWinnerAndRestart());
         }
 
@@ -93,7 +94,7 @@ public class GameplayController : MonoBehaviour
             //Lose
             Debug.Log("Sword Lose");
             audioSource.clip = swordLose_Sfx;
-            videoPlayer.clip = currentEnemy.Videos[1];
+            videoPlayer.clip = currentEnemy.Videos[(int)enemyVideoSelection.Lose];
             StartCoroutine(DetermineWinnerAndRestart());
         }
 
@@ -102,7 +103,7 @@ public class GameplayController : MonoBehaviour
             //Win
             Debug.Log("Shield Win");
             audioSource.clip = shieldWin_Sfx;
-            videoPlayer.clip = currentEnemy.Videos[2];
+            videoPlayer.clip = currentEnemy.Videos[(int)enemyVideoSelection.Win];
             StartCoroutine(DetermineWinnerAndRestart());
         }
 
@@ -111,7 +112,7 @@ public class GameplayController : MonoBehaviour
             //Win
             Debug.Log("Spell Win");
             audioSource.clip = spellWin_Sfx;
-            videoPlayer.clip = currentEnemy.Videos[2];
+            videoPlayer.clip = currentEnemy.Videos[(int)enemyVideoSelection.Win];
             StartCoroutine(DetermineWinnerAndRestart());
         }
 
@@ -120,7 +121,7 @@ public class GameplayController : MonoBehaviour
             //Win
             Debug.Log("Sword Win");
             audioSource.clip = swordWin_Sfx;
-            videoPlayer.clip = currentEnemy.Videos[2];
+            videoPlayer.clip = currentEnemy.Videos[(int)enemyVideoSelection.Win];
             StartCoroutine(DetermineWinnerAndRestart());
         }  
 
@@ -133,6 +134,7 @@ public class GameplayController : MonoBehaviour
         videoPlayer.Play();
         yield return new WaitForSeconds(2.0f);
         animationController.ResetAnimations();
+        yield return new WaitForSeconds(2.0f);
         screenUI.enabled = false;
     }
 
