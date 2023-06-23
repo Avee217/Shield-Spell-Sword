@@ -589,6 +589,8 @@ MonoBehaviour:
   spell_Sprite: {fileID: 21300000, guid: 570a23b86d4fa5f49a6b6882bf1b889e, type: 3}
   sword_Sprite: {fileID: 21300000, guid: 8d1fb0d82941ed84598deba146fb64d5, type: 3}
   audioSource: {fileID: 650388974}
+  videoPlayer: {fileID: 1839238067}
+  screenUI: {fileID: 693751446}
   playerSelection_Img: {fileID: 502106271}
   EnemySelection_Img: {fileID: 2094623910}
   tie_Sfx: {fileID: 8300000, guid: 24c788a95d60bd3478a0025a4a4357f0, type: 3}
@@ -598,6 +600,8 @@ MonoBehaviour:
   shieldLose_Sfx: {fileID: 8300000, guid: 8d6ac5d1242069f43b6dc9d79cad7bd9, type: 3}
   spellWin_Sfx: {fileID: 8300000, guid: 2beda32d5bd4c9e45a85c0ffba9739ad, type: 3}
   spellLose_Sfx: {fileID: 8300000, guid: cb85a64094845f541873b7961a56c072, type: 3}
+  enemies:
+  - {fileID: 11400000, guid: b4424f6d35e14d1429888bdbc52c407e, type: 2}
 --- !u!114 &650388972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,7 +643,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.512
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -834,7 +838,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &693751446
@@ -1682,6 +1686,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1839238068}
   - component: {fileID: 1839238067}
+  - component: {fileID: 1839238069}
   m_Layer: 0
   m_Name: Video Player
   m_TagString: Untagged
@@ -1697,7 +1702,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839238066}
   m_Enabled: 1
-  m_VideoClip: {fileID: 0}
+  m_VideoClip: {fileID: 32900000, guid: 808a470288a3a1543a8fee976516fe02, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -1739,6 +1744,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1839238069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839238066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77fecd06699e8fa49b04ab3973bd67e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Videos: []
 --- !u!1 &1860656522
 GameObject:
   m_ObjectHideFlags: 0
