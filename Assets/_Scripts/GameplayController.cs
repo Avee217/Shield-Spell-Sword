@@ -24,7 +24,6 @@ public class GameplayController : MonoBehaviour
 
     private EnemyData currentEnemy;
 
-    //[SerializeField] private Text info_Text;
 
     private GameSelections player_Selection = GameSelections.NONE, enemy_Selection = GameSelections.NONE;
 
@@ -134,7 +133,7 @@ public class GameplayController : MonoBehaviour
         videoPlayer.Play();
         yield return new WaitForSeconds(2.0f);
         animationController.ResetAnimations();
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.0f);
         screenUI.enabled = false;
     }
 
